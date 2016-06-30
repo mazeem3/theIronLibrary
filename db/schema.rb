@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160629184818) do
     t.decimal  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal  "author_id"
   end
 
 end

@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+
+root 'books#index'
+get 'books/new' => 'books#new', as: :new_book
+get 'books/:id' => 'books#show', as: :book
+get 'books/:id/edit' => 'books#edit', as: :edit_book
+patch 'books/:id' => 'books#update'
+post 'books' => 'books#create'
+delete 'books/:id' => 'books#delete'
+get 'authors/new' => 'authors#new', as: :new_author
+get 'authors/:id' => 'authors#show', as: :author
+get 'authors/:id/edit' => 'books#edit', as: :edit_author
+post 'authors' => 'authors#create'
+delete 'authors/:id' => 'authors#delete'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

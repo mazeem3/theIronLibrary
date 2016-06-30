@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div class="page-header">
+    <%= link_to root_path, class: "title_text" do%>
+    <h1>The Iron Library</h1>
+  <%end %>
+  </div>
 <%= yield %>
 
 </body>
