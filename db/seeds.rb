@@ -9,5 +9,5 @@
 Author.delete_all
 Book.delete_all
 
-Author.create first_name: "Maaz", last_name: "Azeem", bio: "A horrible author"
-Book.create title: "Test", photo_url:"http://pngimg.com/upload/book_PNG2116.png", price: 8.99, author_id: 1
+author  = Author.create first_name: "Maaz", last_name: "Azeem", bio: "A horrible author"
+Book.create title: "Test", photo_url:"http://pngimg.com/upload/book_PNG2116.png", price: 8.99, author_id: author.id
