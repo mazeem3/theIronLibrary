@@ -1,7 +1,5 @@
 class BooksController < ApplicationController
-
     def book
-        @book = Book.new
         @book.author_id = params[:book][:author_id]
         @book.title = params[:book][:title]
         @book.photo_url = params[:book][:photo_url]
@@ -22,6 +20,7 @@ class BooksController < ApplicationController
     end
 
     def create
+        @book = Book.new
         book
         if @book.save
             redirect_to root_path, notice: 'Book Created!'
@@ -35,6 +34,7 @@ class BooksController < ApplicationController
     end
 
     def update
+        @book = Book.find_by id: params[:id]
         book
         if @book.save
             redirect_to root_path
@@ -42,6 +42,7 @@ class BooksController < ApplicationController
             render :edit
         end
     end
+
     def delete
         Book.find(params[:id]).destroy
         redirect_to root_path
