@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
     def book
         @book = Book.new
         @book.author_id = params[:book][:author_id]
