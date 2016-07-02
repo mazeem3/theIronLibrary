@@ -1,3 +1,10 @@
+<% if @book.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <% @book.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+<% end %>
 <div class="well">
 
 <%= form_for @book do |f| %>

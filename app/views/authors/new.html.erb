@@ -1,3 +1,11 @@
+<% if @author.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <% @author.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+<% end %>
+
 <%= form_for @author do |f| %>
   <div class="form-group">
     <%= f.label :first_name %>
