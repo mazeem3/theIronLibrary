@@ -13,7 +13,7 @@
         <%= link_to book.title, book_path(id: book.id) %></h4><br>
         <small>Price:</small>
         <%= "$#{book.price}" %><br>
-        by <%= link_to book.author.full_name, author_path(id: book.author_id) %>
+        by <%= link_to book.author.fname, author_path(id: book.author_id) %>
       </div>
     </div>
     <% end %><br>
