@@ -1,17 +1,15 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 addons:
-  postgresql: "9.4"
+  postgresql: '9.4'
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
 deploy:
   provider: heroku
-  app: photolog-autodeploy
   api_key:
-    secure: NtvTupqOjk1pDX25/mUFaUT1Zvz44M/6MJG86fTUUjWNaOWwZv8GU2dyz5aDVjPiAoni+dMPjaqVDp0unjpLTptPKHQ4mKn140/bs06+0xa2zWsfGsG6uEsyL1O0DU1PDq1paWuoaOGm/5ztcSrpNP6OqLrMagtev+bcVPFJYt9y71HhwyzQIk98zUOTBut8nly0/byYM6iR38ezvQBmATtnPz5DEU/7XKodC9sRG6J7A5hZIYt5Fdj09F++2ELvXN57lHs19q1cFmaUz06Dyb/gW3/R6zd5JSzhKaaB2K/CxYyzPOZbzr5Ccf91ExV0yYiF3beEylQLdzn5oyEXHZEwt/5KJZISp4sFnpyfFW4ePlSN9UTiixYX2bpNy3SphtPvLHZ5xWLnRWHVG4E1zEeRQU95iUQJ/FV3OqQsfL9V4QCOy50oqc232vX6tbs5MIsfE27/oz54nZ4bKnoLlAUFog+VO9wefHgyGrbytyGSqo9fQm1KmgaXB/rHeT9BsW8iaEGNuRX43riJ+kxFhPd3wGFJU4OU7+V+NOE4q3R/1neDvSfLM6YQLVthM8qM7OdhFU1zJuc7RbYyy1gFudKqtbDthAHCmDQFtCZSy6Oua8E4C4A5jfa40BqBveujJrs/HZ0A0A23MQyn/E8Hf49Pwq74RdIvuADBO4MIdv0=
-  run:
-    - rake db:migrate
-    - restart
-    - rake cleanup
+    secure: agDjTi6+gFnG9Xu1TX5/0UfvAdrvyO70EsRclyn9hk8ql0Y60jMbWglwvwefDrQ8sG/IHiEISiDDD+1Uup9Zeb8Vd4Myt4FAz4LCfR7bQHr4sfPdgJE5Sm9k35F6nruxBkaGpUBDXwhh17jj38yzI5fbo89qg1ObS8eJlfmF6q299wW3W9To8als5Y6e+Nd1NcBQmv0aZzMjqv/6JVjpwVfdllKpX/NqPbbUovezQbkp6rZkVKb7ovfhq+Hw6skg01sbw5I8SJX6899NArKeIZEHQAFHQo4YosjbNxzoD6dO5wndLIKTsQdHob7wc8FgYyFa9nxISCzi751vAZcpBngmxnGFMv7uEQwLZjjoiTrTmnrsR/1BmMXusSDqSiVEnI09GBg4Bwmh/zybXV266tPBYlYSg90ay3eK4HB8QMywZ7f+LEq0uH6yWPbG03rWGJf3bCuRk3PxkIT7OUp0EUTPh7za91I+WfNLNcV6kyVSYBGTtdK62D8YQFsXnt9/5Kdt10uevBZ8HymmKtr+OSr36o+wViMkPRPU6jfWV1q65uBkcD4+U5DCka1F/7zpBhR1Nd8BGAMqYOtdP4eZwmixwPrOJV5rKMLxTmKryDpzNcgdhyG9Uu9BXlH6FVJ9m3NQXqy8K9salsoB0VO1tmf8GeX3LWxnzM//bpd6sP4=
+  app: theironlibrary-maaz
+  on:
+    repo: mazeem3/theIronLibrary
