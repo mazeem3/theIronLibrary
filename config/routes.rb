@@ -13,7 +13,12 @@ get 'authors/:id/edit' => 'books#edit', as: :edit_author
 post 'authors' => 'authors#create'
 delete 'authors/:id' => 'authors#delete'
 
+get 'sign_in' => 'sessions#new', as: :sign_in
+post 'sign_in' => 'sessions#create'
+delete 'sign_in' => 'sessions#delete'
 
+get 'registration' => 'users#new', as: :new_user
+post 'registration' => 'users#create', as: :create_user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
