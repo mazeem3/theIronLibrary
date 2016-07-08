@@ -8,6 +8,8 @@
 
 Author.delete_all
 Book.delete_all
+User.delete_all
 
+maaz = User.create! username: "maaz", password: "12345678"
 author  = Author.create! first_name: "Maaz", last_name: "Azeem", bio: "A horrible author"
 Book.create! title: "Test", photo_url:"http://pngimg.com/upload/book_PNG2116.png", price: 8.99, author_id: author.id

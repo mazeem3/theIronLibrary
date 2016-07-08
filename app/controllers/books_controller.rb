@@ -1,4 +1,9 @@
 class BooksController < ApplicationController
+  before_action except: :show do
+    if @current_user.nil?
+      redirect_to sign_in_path, notice: "Please Sign in"
+    end
+  end
     def book
         @book.author_id = params[:book][:author_id]
         @book.title = params[:book][:title]

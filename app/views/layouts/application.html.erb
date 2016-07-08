@@ -12,7 +12,24 @@
     <h1>The Iron Library</h1>
   <%end %>
   </div>
-<%= yield %>
 
-</body>
-</html>
+  <% if @current_user %>
+       <%= link_to 'Sign Out', sign_in_path, method: :delete %>
+
+       Hi <%= @current_user.username %>. 
+     <% else %>
+       <%= link_to 'Sign In', sign_in_path %>
+
+     <% end %>
+   </header>
+
+   <% if notice %>
+     <p>
+       <%= notice %>
+     </p>
+   <% end %>
+
+ <%= yield %>
+
+ </body>
+ </html>
