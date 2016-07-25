@@ -14,14 +14,17 @@
   </div>
 
   <% if @current_user %>
-       <%= link_to 'Sign Out', sign_in_path, method: :delete %>
+  <div class="logging">
+    <%= link_to 'Sign Out', sign_in_path, method: :delete %>
 
-       Hi <%= @current_user.username %>. 
-     <% else %>
-       <%= link_to 'Sign In', sign_in_path %>
+    Hi <%= @current_user.username %>.
+  <% else %>
+    <%= link_to 'Sign In', sign_in_path %>
 
-     <% end %>
-   </header>
+  <% end %>
+
+
+  </div>
 
    <% if notice %>
      <p>

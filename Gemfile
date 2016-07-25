@@ -17,6 +17,7 @@ gem "minitest-rails"
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem "acts_as_follower"
+gem 'faker'
 
 
 
