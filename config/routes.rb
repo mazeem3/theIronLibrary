@@ -20,13 +20,13 @@ delete 'sign_in' => 'sessions#delete'
 get 'registration' => 'users#new', as: :new_user
 post 'registration' => 'users#create', as: :create_user
 
-post 'books/checkout/:id' => 'books#checkout', as: :checkout_book
-delete 'books/checkout/:id' => 'books#checkin', as: :checkin_book
+# post 'books/checkout/:id' => 'books#check_out', as: :checkout_book
+# delete 'books/checkout/:id' => 'books#check_in', as: :checkin_book
 
 get 'api/books' => 'api/books#index', as: :api_books
 get 'api/books/:id' => 'api/books#show', as: :api_book
-post 'api/books/checkout/:id' => 'api/books#checkout'
-delete 'api/books/checkout/:id' => 'api/books#checkin'
+post 'api/books/checkout/:id' => 'api/books#check_out', as: :checkout_book
+delete 'api/books/checkout/:id' => 'api/books#check_in', as: :checkin_book
 
 
 

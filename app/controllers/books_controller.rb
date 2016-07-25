@@ -1,9 +1,7 @@
 class BooksController < ApplicationController
-  before_action except: :show do
-    if @current_user.nil?
-      redirect_to sign_in_path, notice: "Please Sign in"
+    before_action except: :show do
+        redirect_to sign_in_path, notice: 'Please Sign in' if @current_user.nil?
     end
-  end
     def book
         @book.author_id = params[:book][:author_id]
         @book.title = params[:book][:title]
@@ -52,4 +50,5 @@ class BooksController < ApplicationController
         Book.find(params[:id]).destroy
         redirect_to root_path
     end
+
 end

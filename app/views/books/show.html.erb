@@ -1,13 +1,24 @@
 <div class="col-sm-8">
-  <div class="well well-lg">
-  Title: <%= @book.title %><br>
-  Author: <%= @book.author.fname %>
-  <br><br>
-  <%= link_to 'All Books', root_path, class:"btn btn-primary" %>
-  <%= link_to 'Edit', edit_book_path(id: @book.id), class:"btn btn-primary" %>
-  <%= link_to "Delete", book_path(id: @book.id), method: 'delete', class:"btn btn-danger" %><br>
-  </div>
+    <div class="well well-lg">
+        Title:
+        <%= @book.title %><br>
+        Author:
+        <%= @book.author.fname %>
+        <br><br>
+        <%if @book.quantity >= 1 %>
+        <h3><%= pluralize(@book.quantity, 'Copy') %>
+            in Stock</h3>
+    <% else %>
+        <h3>Out of stock, please check back later.</h3>
+        <% end %>
+        <%= link_to 'All Books', root_path, class:"btn btn-primary" %>
+        <%= link_to 'Edit', edit_book_path(id: @book.id), class:"btn btn-primary" %>
+        <%= link_to "Delete", book_path(id: @book.id), method: 'delete', class:"btn btn-danger" %>
+        <%= link_to "Checkout", checkout_book_path(id: @book.id), method: :post, class: "btn btn-default" %>
+        <%= link_to "Checkin", checkin_book_path(id: @book.id), method: :delete, class: "btn btn-default" %>
+        <br>
+    </div>
 </div>
 <div class="col-sm-4">
-  <%= image_tag("#{@book.photo_url}") %>
+    <%= image_tag("#{@book.photo_url}") %>
 </div>
