@@ -13,3 +13,4 @@ Book.create! title: "Test", photo_url:"http://pngimg.com/upload/book_PNG2116.png
   i = Author.create! first_name: "#{Faker::Name.first_name}" , last_name: "#{Faker::Name.first_name}", bio: "#{Faker::Lorem.paragraph}"
   Book.create! title: "#{Faker::Book.title}", photo_url:"http://pngimg.com/upload/book_PNG2116.png", price:"#{Faker::Commerce.price}", author_id: i.id
 end
+hi
