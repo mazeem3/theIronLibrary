@@ -6,3 +6,13 @@ addons:
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: tH3ppvb7ruDllsRB1o523rei8edLIL+WSohyDZ+7iVoqhvtG/mBbGXX84rkWzdw9DB5/LxXncZJCKgrklJaK8gi9kegz+vpgEdpcPrGBicHRIlDGwrS1OVLTRTA6cHD96ghqjWebCKMojx+gk8FuNFWqHzvIptiLfJvG0FjHuzDtp9cFVma9OD1kLpeKza1ajiJXcUxD7BHezdOiBdp+xhyRLl2oZbltk9DK4Msy2A5sEwII9LRj6Jrb6SVQw2XpbjJ+3LKnLQd3D3oeXwUEpbcW3XhZPa2LpL48ObaDbkntd7Ezcp1AREzQed85fNj9NneSPg/cm83qv44CxrwGOJ6wtLqkeFz8ue8FPz/TZRBY/CnT6hszJo+0H2FWySm0XbhZQzLdkefH0LlBLBBC1hPIlHuo3dUj0DutxUGPoFB8doKMs+jVa5glQaKaLo0IUnr26psFGX+WjqCjVxLV5LzdSG/RRh8i4gmIanQG7gvojXOB5iqB1ofZsNeLWg5cs20VcAVq4mBL4KLxjxNLwWdEmdLLC6QCt8RHjs7CkmqUQhLI720OCFXoNO1QhRw4NpjIwG4R+oZYA5bykHknQpdv5m3jVT7JjnRGUnAp6fyAUU6TtK+Ej2WJK28Ajx2/fqHLOLOmsBmnvAZymQtMKlCYaSzUYn3KbEX0W2tG7gw=
+  app: ironlibrary-maaz
+  on:
+    repo: mazeem3/theIronLibrary
+    branch: Add-API
+  run:
+    - "rake db:migrate"
