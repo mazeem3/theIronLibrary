@@ -6,12 +6,3 @@ addons:
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
-deploy:
-  provider: heroku
-  api_key:
-    secure: agDjTi6+gFnG9Xu1TX5/0UfvAdrvyO70EsRclyn9hk8ql0Y60jMbWglwvwefDrQ8sG/IHiEISiDDD+1Uup9Zeb8Vd4Myt4FAz4LCfR7bQHr4sfPdgJE5Sm9k35F6nruxBkaGpUBDXwhh17jj38yzI5fbo89qg1ObS8eJlfmF6q299wW3W9To8als5Y6e+Nd1NcBQmv0aZzMjqv/6JVjpwVfdllKpX/NqPbbUovezQbkp6rZkVKb7ovfhq+Hw6skg01sbw5I8SJX6899NArKeIZEHQAFHQo4YosjbNxzoD6dO5wndLIKTsQdHob7wc8FgYyFa9nxISCzi751vAZcpBngmxnGFMv7uEQwLZjjoiTrTmnrsR/1BmMXusSDqSiVEnI09GBg4Bwmh/zybXV266tPBYlYSg90ay3eK4HB8QMywZ7f+LEq0uH6yWPbG03rWGJf3bCuRk3PxkIT7OUp0EUTPh7za91I+WfNLNcV6kyVSYBGTtdK62D8YQFsXnt9/5Kdt10uevBZ8HymmKtr+OSr36o+wViMkPRPU6jfWV1q65uBkcD4+U5DCka1F/7zpBhR1Nd8BGAMqYOtdP4eZwmixwPrOJV5rKMLxTmKryDpzNcgdhyG9Uu9BXlH6FVJ9m3NQXqy8K9salsoB0VO1tmf8GeX3LWxnzM//bpd6sP4=
-  app: theironlibrary-maaz
-  on:
-    repo: mazeem3/theIronLibrary
-
-    
